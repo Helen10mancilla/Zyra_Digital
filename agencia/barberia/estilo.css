@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Oswald', sans-serif;
+}
+
+body {
+  background: #050505;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* ===== HERO ===== */
+.hero {
+  height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(255,0,80,0.3), transparent),
+    url("https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* GLITCH TEXT */
+.glitch {
+  font-size: 4rem;
+  text-transform: uppercase;
+  position: relative;
+  color: white;
+  animation: flicker 2s infinite;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+
+.glitch::before {
+  color: #ff004c;
+  animation: glitchTop 1.5s infinite;
+}
+
+.glitch::after {
+  color: #00ffe5;
+  animation: glitchBottom 1.2s infinite;
+}
+
+@keyframes glitchTop {
+  0% {clip-path: inset(0 0 80% 0);}
+  50% {clip-path: inset(10% 0 60% 0);}
+  100% {clip-path: inset(0 0 80% 0);}
+}
+
+@keyframes glitchBottom {
+  0% {clip-path: inset(80% 0 0 0);}
+  50% {clip-path: inset(60% 0 10% 0);}
+  100% {clip-path: inset(80% 0 0 0);}
+}
+
+@keyframes flicker {
+  0%,100% {opacity: 1;}
+  50% {opacity: 0.85;}
+}
+
+.hero p {
+  margin: 20px 0 40px;
+  font-size: 1.4rem;
+  color: #ddd;
+}
+
+/* BOTÓN */
+.btn {
+  padding: 15px 40px;
+  background: linear-gradient(90deg, #ff004c, #ff7a00);
+  border-radius: 40px;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 30px #ff004c;
+}
+
+/* ===== SECCIONES ===== */
+.section {
+  padding: 100px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 60px;
+  color: #ff004c;
+}
+
+/* SERVICIOS */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.service {
+  background: #0f0f0f;
+  border: 2px solid #ff004c;
+  padding: 40px 20px;
+  text-align: center;
+  font-size: 1.4rem;
+  transition: 0.4s;
+}
+
+.service:hover {
+  background: #ff004c;
+  color: black;
+  transform: translateY(-15px) rotate(-1deg);
+}
+
+/* ===== CARRUSEL ===== */
+.carousel {
+  position: relative;
+  height: 420px;
+  overflow: hidden;
+  border: 4px solid #ff004c;
+}
+
+.carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.carousel img.active {
+  opacity: 1;
+}
+
+/* CONTACTO */
+.contact {
+  background: linear-gradient(180deg, #ff004c, #050505);
+  text-align: center;
+  padding: 100px 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  background: black;
+  color: #777;
+}

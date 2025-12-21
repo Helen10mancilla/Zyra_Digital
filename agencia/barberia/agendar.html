@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Agendar cita | Barbería</title>
+<link rel="stylesheet" href="./styles_barber.css">
+</head>
+
+<body>
+
+<section class="agenda-container">
+  <h1>Agenda tu cita</h1>
+  <p>Selecciona el servicio y el horario que prefieras</p>
+
+  <form id="formCita">
+    <input type="text" id="nombre" placeholder="Nombre completo" required>
+
+    <select id="corte" required>
+      <option value="">Selecciona tu corte</option>
+      <option value="Corte urbano - $20.000">Corte urbano - $20.000</option>
+      <option value="Fade - $25.000">Fade - $25.000</option>
+      <option value="Barba - $15.000">Barba - $15.000</option>
+      <option value="Otro">Otro</option>
+    </select>
+
+    <input type="date" id="fecha" required>
+    <select id="hora" required>
+  <option value="">Selecciona una hora</option>
+  <option value="09:00">09:00</option>
+  <option value="10:00">10:00</option>
+  <option value="11:00">11:00</option>
+  <option value="12:00">12:00</option>
+  <option value="14:00">14:00</option>
+  <option value="15:00">15:00</option>
+  <option value="16:00">16:00</option>
+  <option value="17:00">17:00</option>
+</select>
+
+
+    <button type="submit">Confirmar cita</button>
+  </form>
+</section>
+
+<script src="./citas.js"></script>
+</body>
+</html>
