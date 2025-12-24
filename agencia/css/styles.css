@@ -596,3 +596,43 @@
                 padding: 12px 25px;
             }
         }
+
+/* Theme toggle button */
+.theme-toggle{
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+    color: var(--primary);
+}
+.theme-toggle svg{ display:block; }
+
+@media (max-width:768px){
+  .theme-toggle{ top:12px; right:12px; }
+}
+
+/* Dark theme overrides */
+body.dark{
+    background-color: #0b0f16;
+    color: #e6eef8;
+}
+body.dark header{ background-color: #071026; box-shadow: 0 8px 24px rgba(2,6,23,0.6); }
+body.dark .logo{ background: linear-gradient(135deg,#aab2ff,#7b74ff); -webkit-background-clip: text; color: transparent; }
+body.dark .nav-links a{ color: #dbe9ff; }
+body.dark .hero{ background: linear-gradient(135deg,#172033,#0f1b2b); color: #e6eef8; }
+body.dark .project-card, body.dark .plan-card, body.dark .contact-form{ background: #071428; color: #dbe9ff; box-shadow: 0 10px 30px rgba(2,6,23,0.6); }
+body.dark .project-tags span{ background: rgba(138, 134, 255, 0.12); color: #cfd8ff; }
+body.dark .btn{ background: #e6eef8; color: #0b0f16; }
+body.dark .btn-primary{ background: #6b8bff; }
+body.dark footer{ background: #041222; color: rgba(255,255,255,0.8); }
+body.dark .footer-links a, body.dark .contact-info li{ color: rgba(255,255,255,0.75); }
